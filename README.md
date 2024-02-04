@@ -5,7 +5,7 @@ First, you will need to download the desired Google Sheet data as a '.csv' file.
 
 ![Example Image](https://drive.google.com/uc?id=1p65uY47AeDr2KbxJW9ne9OGtbBxUkm-b)
 
-Then, open the 'HIM Auto Message Sender' program, where you will then be asked to upload this '.csv' file.
+Then, open the 'HIM Auto Message Sender' program, where you will be asked to upload this '.csv' file.
 Upon uploading the file, a window with four sections will appear.
 
 ### Message ###
