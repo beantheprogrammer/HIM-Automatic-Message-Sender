@@ -1,5 +1,9 @@
 # HIM-Automatic-Message-Sender
 **This program is availible to Mac users only.**
+
+## Download ##
+[HIM Automatic Message Sender.app.zip](https://github.com/beantheprogrammer/HIM-Automatic-Message-Sender/blob/main/HIM%20Automatic%20Message%20Sender.app.zip "download")
+
 ## How to Use ##
 First, you will need to download the desired Google Sheet data as a '.csv' file. 
 
