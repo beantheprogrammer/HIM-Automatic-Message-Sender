@@ -45,7 +45,7 @@ In the example above, activating 'Must meet all requirements' implies that a num
 1. Column M contains "Andrew Lau"
 2. Column K contains "Expo AM"
 3. Column R contains "6:15 AM"
-4. Column R contains ""
+4. Column R contains "" (Nothing)
 
 Nevertheless, when 'Must meet all requirements' is deactivated, the system will send a text message to the number if any one of the specified conditions is met.
 
