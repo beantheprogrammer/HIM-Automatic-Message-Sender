@@ -36,7 +36,7 @@ def add_filter():
         filter_labels.append(Label(filter_frame, font=("Arial", 11)))
         filter_labels[len(filters) - 1].config(
             text="From column " + str(list(alphabet_list)[filters[len(filters) - 1][0]]) + " find \"" + str(
-                filters[len(filters) - 1][1]) + "\"", bg='#444444')
+                filters[len(filters) - 1][1]) + "\"")
         filter_labels[len(filters) - 1].grid(row=len(filters))
 
 
