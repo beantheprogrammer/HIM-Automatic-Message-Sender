@@ -86,17 +86,18 @@ def open_file():
 window = Tk()
 window.title('HIM Automatic Message Sender')
 window.resizable(False, False)
+window.config()
 
 file_input = Button(window, text="Upload .csv File", command=open_file)
 file_input.grid(row=0)
 
-message_frame = Frame(window, bg='#444444')
-filter_dropdown_frame = Frame(window)
-dropdown_frame = Frame(filter_dropdown_frame, bg='#444444')
-filter_frame = Frame(filter_dropdown_frame, bg='#444444')
-number_frame = Frame(window, bg='#444444')
+message_frame = Frame(window, borderwidth=1, relief="groove")
+filter_dropdown_frame = Frame(window, borderwidth=1, relief="groove")
+dropdown_frame = Frame(filter_dropdown_frame, borderwidth=1, relief="groove")
+filter_frame = Frame(filter_dropdown_frame, borderwidth=1, relief="groove")
+number_frame = Frame(window, borderwidth=1, relief="groove")
 
-message_label = Label(message_frame, bg='#444444')
+message_label = Label(message_frame)
 message_label.config(text="Message")
 message_label.grid(row=0)
 
@@ -104,14 +105,14 @@ message_input = Text(message_frame)
 message_input.config(width=50, height=15)
 message_input.grid(row=1)
 
-alphabet_dropdown_label = Label(dropdown_frame, bg='#444444')
+alphabet_dropdown_label = Label(dropdown_frame)
 alphabet_dropdown_label.config(text="Google Sheets Column")
 alphabet_dropdown_label.grid(row=0)
 
 alphabet_dropdown_value = StringVar(window, "A")
 
 dropdown_text_label = Label(dropdown_frame)
-dropdown_text_label.config(text="Targeted Value", bg='#444444')
+dropdown_text_label.config(text="Targeted Value")
 dropdown_text_label.grid(row=2)
 
 dropdown_text = Entry(dropdown_frame)
@@ -123,16 +124,16 @@ filter.grid(row=4)
 filter_labels = []
 
 filter_text_label = Label(filter_frame)
-filter_text_label.config(text="Filters Added (Max 5)", bg='#444444')
+filter_text_label.config(text="Filters Added (Max 5)")
 filter_text_label.grid(row=0)
 
-filter = Button(filter_frame, text="Clear Filters", command=clear_filter, bg='#444444')
+filter = Button(filter_frame, text="Clear Filters", command=clear_filter)
 filter.grid(row=7)
 
-cb = Checkbutton(filter_frame, text="Must meet all requirements.", bg='#444444', command=change_req)
+cb = Checkbutton(filter_frame, text="Must meet all requirements.", command=change_req)
 cb.grid(row=8)
 
-number_alphabet_dropdown_label = Label(number_frame, bg='#444444')
+number_alphabet_dropdown_label = Label(number_frame)
 number_alphabet_dropdown_label.config(text="Phone Number Column")
 number_alphabet_dropdown_label.grid(row=0)
 
