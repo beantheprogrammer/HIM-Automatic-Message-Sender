@@ -2,7 +2,7 @@
 **This program is availible to Mac users only.**
 
 ## Download ##
-[HIM Automatic Message Sender.app.zip](https://github.com/beantheprogrammer/HIM-Automatic-Message-Sender/blob/main/HIM%20Automatic%20Message%20Sender.app.zip "download")
+[HIM Automatic Message Sender.app.zip](https://github.com/beantheprogrammer/HIM-Automatic-Message-Sender/archive/refs/heads/main.zip)
 
 ![Example Image](https://drive.google.com/uc?id=1N7suon6Rkk7TrMijGTY1PyeW4jtD6K5Y)
 
