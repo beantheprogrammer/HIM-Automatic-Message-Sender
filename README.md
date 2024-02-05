@@ -11,6 +11,8 @@ Upon extracting the 'HIM-Automatic-Message-Sender-main' file, you will find a fo
 
 Rest assured, this application is not malicious. To resolve this issue, navigate to the System Preferences application on your Mac, select Security and Privacy, go to the General tab, and you will encounter a message concerning the blocked application. Simply click 'Open Anyway,' and the application will be ready for use.
 
+![Example Image](https://drive.google.com/uc?id=1BH2Xz2Bq-6YR70E__nixcmx_MhMHHhWW)
+
 ## How to Use ##
 First, you will need to download the desired Google Sheet data as a '.csv' file. 
 
