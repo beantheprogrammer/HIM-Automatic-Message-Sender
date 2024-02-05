@@ -14,6 +14,7 @@ Rest assured, this application is not malicious. To resolve this issue, navigate
 ![Example Image](https://drive.google.com/uc?id=1BH2Xz2Bq-6YR70E__nixcmx_MhMHHhWW)
 
 ## How to Use ##
+# [Ensure that you are connected to Messages on your Mac using your phone number.](https://support.apple.com/en-us/108758#:~:text=For%20Messages%2C%20choose%20Messages%20%3E%20Settings,Apple%20ID%20in%20the%20list.) #
 First, you will need to download the desired Google Sheet data as a '.csv' file. 
 
 ![Example Image](https://drive.google.com/uc?id=1p65uY47AeDr2KbxJW9ne9OGtbBxUkm-b)
