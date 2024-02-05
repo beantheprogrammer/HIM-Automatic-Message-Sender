@@ -4,7 +4,17 @@
 ## Download ##
 [Download Link] https://github.com/beantheprogrammer/HIM-Automatic-Message-Sender/archive/refs/heads/main.zip
 
+## Setup ##
+Upon extracting the 'HIM-Automatic-Message-Sender-main' file, you will find a folder containing four files. The application you are looking for is named 'HIM Automatic Message Sender.' However, clicking on it may result in encountering the following error:
+
+![Example Image](https://drive.google.com/uc?id=1pcZ3Tuk2ApitER5SvKIbpin9QKqpXT1o)
+
+Rest assured, this application is not malicious. To resolve this issue, navigate to the System Preferences application on your Mac, select Security and Privacy, go to the General tab, and you will encounter a message concerning the blocked application. Simply click 'Open Anyway,' and the application will be ready for use.
+
+![Example Image](https://drive.google.com/uc?id=1BH2Xz2Bq-6YR70E__nixcmx_MhMHHhWW)
+
 ## How to Use ##
+# [Ensure that you are connected to Messages on your Mac using your phone number.](https://support.apple.com/en-us/108758#:~:text=For%20Messages%2C%20choose%20Messages%20%3E%20Settings,Apple%20ID%20in%20the%20list.) #
 First, you will need to download the desired Google Sheet data as a '.csv' file. 
 
 ![Example Image](https://drive.google.com/uc?id=1p65uY47AeDr2KbxJW9ne9OGtbBxUkm-b)
