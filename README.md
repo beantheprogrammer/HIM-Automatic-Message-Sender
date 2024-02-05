@@ -50,7 +50,7 @@ In the example above, activating 'Must meet all requirements' implies that a num
 Nevertheless, when 'Must meet all requirements' is deactivated, the system will send a text message to the number if any one of the specified conditions is met.
 
 ### Phone Number Column ###
-Lastly, in this section, identify the column where the phone numbers tab is listed. However, before proceeding to click "send," there are some important considerations to keep in mind:
+Lastly, in this section, identify the column where the phone numbers tab is listed. However, before proceeding to click 'send,' there are some important considerations to keep in mind:
 
 - Ensure that you are using the correct and up-to-date '.csv' file; the structure of Google Sheets for Heart in Motion events undergoes constant changes, which may lead to alterations in columns or values.
 - Double-check your filters and message; it's crucial to avoid sending messages to the wrong recipients or transmitting incorrect information inadvertently.
