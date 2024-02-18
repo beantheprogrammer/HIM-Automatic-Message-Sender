@@ -6,7 +6,7 @@ import csv
 import sys
 import subprocess
 
-os.chdir(sys._MEIPASS)
+# os.chdir(sys._MEIPASS)
 
 filters = []
 alphabet_list = []
@@ -24,6 +24,7 @@ def send_message():
         confirm_send = True
     else:
         confirm.grid_forget()
+        everyone.deselect()
         everyone.grid_forget()
 
         MESSAGE = message_input.get("1.0", 'end-1c')
