@@ -29,12 +29,12 @@ def send_message():
         confirm_send = False
 
         MESSAGE = message_input.get("1.0", 'end-1c')
-        if MESSAGE and len(filters) > 0 and not MESSAGE.isspace():
+        if MESSAGE and (len(filters) > 0 or send_to_everyone) and not MESSAGE.isspace():
             with open(file_path) as csvfile:
                 reader = csv.reader(csvfile, delimiter=',')
                 contacted_numbers = []
                 for row in reader:
-                    if (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters)) or send_to_everyone:
+                    if send_to_everyone or (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters)):
                         number_index = alphabet_list.index(number_alphabet_dropdown_value.get())
                         RECIPIENT_NUMBER = row[number_index].replace('-', '')
                         if RECIPIENT_NUMBER.isnumeric() and all(int(RECIPIENT_NUMBER) != int(number) for number in contacted_numbers):
