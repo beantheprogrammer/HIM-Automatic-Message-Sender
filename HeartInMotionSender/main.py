@@ -12,22 +12,32 @@ filters = []
 alphabet_list = []
 req_all = False
 file_path = ""
+confirm_send = False
+send_to_everyone = False
 
+def send_message():
+    global confirm_send
+    if not confirm_send:
+        confirm.grid(row=5)
+        everyone.grid(row=4)
+        confirm_send = True
+    else:
+        confirm.grid_forget()
+        everyone.grid_forget()
 
-def submit():
-    MESSAGE = message_input.get("1.0", 'end-1c')
-    if MESSAGE and len(filters) > 0 and not MESSAGE.isspace():
-        with open(file_path) as csvfile:
-            reader = csv.reader(csvfile, delimiter=',')
-            contacted_numbers = []
-            for row in reader:
-                if (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters)):
-                    number_index = alphabet_list.index(number_alphabet_dropdown_value.get())
-                    RECIPIENT_NUMBER = row[number_index].replace('-', '')
-                    if RECIPIENT_NUMBER.isnumeric() and all(int(RECIPIENT_NUMBER) != int(number) for number in contacted_numbers):
-                        contacted_numbers.append(RECIPIENT_NUMBER)
-                        subprocess.Popen(['osascript', 'sendmessage.txt', RECIPIENT_NUMBER, MESSAGE], stdout=subprocess.PIPE)
-
+        MESSAGE = message_input.get("1.0", 'end-1c')
+        if MESSAGE and len(filters) > 0 and not MESSAGE.isspace():
+            with open(file_path) as csvfile:
+                reader = csv.reader(csvfile, delimiter=',')
+                contacted_numbers = []
+                for row in reader:
+                    if (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters) or send_to_everyone):
+                        number_index = alphabet_list.index(number_alphabet_dropdown_value.get())
+                        RECIPIENT_NUMBER = row[number_index].replace('-', '')
+                        if RECIPIENT_NUMBER.isnumeric() and all(int(RECIPIENT_NUMBER) != int(number) for number in contacted_numbers):
+                            contacted_numbers.append(RECIPIENT_NUMBER)
+                            subprocess.Popen(['osascript', 'sendmessage.txt', RECIPIENT_NUMBER, MESSAGE], stdout=subprocess.PIPE)
+        confirm_send = False
 
 def add_filter():
     filter = dropdown_text.get()
@@ -51,7 +61,6 @@ def clear_filter():
 def change_req():
     global req_all
     req_all = not req_all
-
 
 def open_file():
     global file_path
@@ -82,6 +91,9 @@ def open_file():
     number_frame.grid(row=2, pady=10)
     submit.grid(row=3)
 
+def change_everyone():
+    global send_to_everyone
+    send_to_everyone = not send_to_everyone
 
 window = Tk()
 window.title('HIM Automatic Message Sender')
@@ -139,6 +151,11 @@ number_alphabet_dropdown_label.grid(row=0)
 
 number_alphabet_dropdown_value = StringVar(window, "A")
 
-submit = Button(window, text="Send", command=submit)
+confirm = Label(window)
+confirm.config(text="Click again to confirm.", fg="#ff0000")
+
+submit = Button(window, text="Send", command=send_message)
+
+everyone = Checkbutton(window, text="Send to everyone.", command=change_everyone)
 
 window.mainloop()
