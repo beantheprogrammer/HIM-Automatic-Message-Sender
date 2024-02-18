@@ -6,7 +6,7 @@ import csv
 import sys
 import subprocess
 
-# os.chdir(sys._MEIPASS)
+os.chdir(sys._MEIPASS)
 
 filters = []
 alphabet_list = []
