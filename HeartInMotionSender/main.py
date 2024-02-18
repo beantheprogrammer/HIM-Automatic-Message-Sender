@@ -26,6 +26,7 @@ def send_message():
         confirm.grid_forget()
         everyone.deselect()
         everyone.grid_forget()
+        confirm_send = False
 
         MESSAGE = message_input.get("1.0", 'end-1c')
         if MESSAGE and len(filters) > 0 and not MESSAGE.isspace():
@@ -33,13 +34,12 @@ def send_message():
                 reader = csv.reader(csvfile, delimiter=',')
                 contacted_numbers = []
                 for row in reader:
-                    if (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters) or send_to_everyone):
+                    if (req_all and all(row[filter[0]] == filter[1] for filter in filters)) or (not req_all and any(row[filter[0]] == filter[1] for filter in filters)) or send_to_everyone:
                         number_index = alphabet_list.index(number_alphabet_dropdown_value.get())
                         RECIPIENT_NUMBER = row[number_index].replace('-', '')
                         if RECIPIENT_NUMBER.isnumeric() and all(int(RECIPIENT_NUMBER) != int(number) for number in contacted_numbers):
                             contacted_numbers.append(RECIPIENT_NUMBER)
                             subprocess.Popen(['osascript', 'sendmessage.txt', RECIPIENT_NUMBER, MESSAGE], stdout=subprocess.PIPE)
-        confirm_send = False
         send_to_everyone = False
 
 
@@ -98,6 +98,7 @@ def open_file():
 def change_everyone():
     global send_to_everyone
     send_to_everyone = not send_to_everyone
+    print(send_to_everyone)
 
 window = Tk()
 window.title('HIM Automatic Message Sender')
