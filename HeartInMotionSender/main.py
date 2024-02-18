@@ -16,6 +16,7 @@ confirm_send = False
 send_to_everyone = False
 
 def send_message():
+    global send_to_everyone
     global confirm_send
     if not confirm_send:
         confirm.grid(row=5)
@@ -38,6 +39,8 @@ def send_message():
                             contacted_numbers.append(RECIPIENT_NUMBER)
                             subprocess.Popen(['osascript', 'sendmessage.txt', RECIPIENT_NUMBER, MESSAGE], stdout=subprocess.PIPE)
         confirm_send = False
+        send_to_everyone = False
+
 
 def add_filter():
     filter = dropdown_text.get()
